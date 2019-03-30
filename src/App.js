@@ -5,24 +5,24 @@ import styled from 'styled-components'
 class App extends Component {
   render() {
     return (
-      <Wrapper>
-        <Title>
-          Hello World
-        </Title>
-      </Wrapper>
+      <div>
+        <Button>Normal</Button>
+        <Button primary>Primary</Button>
+      </div>
     );
   }
 }
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
+const Button = styled.button`
+  background: ${props => props.primary ? "palevioletred" : "white"};
+  color: ${props => props.primary ? "white" : "palevioletred"};
+
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
 `;
 
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`;
 
 export default App;
